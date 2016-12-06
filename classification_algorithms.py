@@ -188,7 +188,28 @@ def gain(data, attr,target_attr):
 		subset_entropy += val_prob * entropy(data_subset, target_attr)
 	return (entropy(data, target_attr) - subset_entropy)
 
-	
+
+#---------------k-means------------------------------------------------------------------------------------------------------------------------
+
+def makeClusters(dataset, clusters):
+    for row in dataset:
+        if dataset[row][0] == 1:
+            clusters.append(dataset[row])
+        if dataset[row][0] == 0:
+            clusters.append(dataset[row])
+        if len(clusters) >1:
+            break
+def kmeans(dataset, k):
+    clusters = []
+    makeClusters(dataset,clusters)
+    for eachCluster in clusters:
+    for x in range(len(trainingSet)):
+		dist = euclideanDistance(testInstance,trainingSet[x],length)
+		distances.append((trainingSet[x],dist))
+            distances.sort(key=operator.itemgetter(1))
+
+
+
 def main():
 	#--------------K-Nearest--------------------------------------------------------------------------------------------------------------------------
 	# data1 = [2, 2, 2, 'a']
